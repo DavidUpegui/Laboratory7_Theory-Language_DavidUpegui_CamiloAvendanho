@@ -121,17 +121,16 @@ public class FrmPrincipal extends javax.swing.JFrame {
                         return;
                     case ExpresionMatematica:
                         try {
-                        int resultadoOp = CalculadoraStrings.evaluar(String.valueOf(txtEntrada.getText()));
-                        resultado += lexer.lexeme + ": Es una expresión matemática\n";
-                        resultado += "El resultado de la expresion es: " + Integer.toString(resultadoOp) + '\n';
+                            int resultadoOp = CalculadoraStrings.evaluar(String.valueOf(txtEntrada.getText()));
+                            resultado += lexer.lexeme + ": Es una expresión matemática\n";
+                            resultado += "El resultado de la expresion es: " + Integer.toString(resultadoOp) + '\n';
                         } catch (ArithmeticException e) {
-                        resultado += lexer.lexeme + ": Es una expresión matemática\n";
-                        resultado += "No se puede calcular el resultado porque hay una división por cero :c \n";
+                            resultado += lexer.lexeme + ": Es una expresión matemática\n";
+                            resultado += "No se puede calcular el resultado porque hay una división por cero :c \n";
                         } catch (BadExpresionException e) {
-                        resultado = txtEntrada.getText() + " No es una expresion matemática correcta\n";
-                    } 
+                            resultado = txtEntrada.getText() + "No es una expresion matemática correcta\n";
+                        } 
                     break;
-
                     default:
                         resultado += "Token: " + tokens + "\n";
                         break;
